@@ -22,6 +22,9 @@ function isEmpty($var) {
 			},
 			'colorArray'  : [],
 			'textPosition' : 'in',
+			include : {
+				vibrant : location.origin+"/js/custom_js/vibrant.js",
+			}
 		};
 		var settings = $.extend(true, defaults, $settings);
 		var color_ = settings.color;
@@ -36,7 +39,7 @@ function isEmpty($var) {
 					swatches = vibrant.swatches();
 				}catch(e){
 					console.warn('Vibrant is not included');					
-					$.getScript( location.origin+"/js/custom_js/vibrant.js" )
+					$.getScript( settings.include.vibrant )
 					.done(function( script, textStatus ) {
 						console.log( '%cVibrant has included successfully','color:green;' );
 						getRGBFromImg(settings.img);
@@ -162,7 +165,7 @@ function isEmpty($var) {
 	}
 
 	$(document).ready(function() {
-		
+		//main 
 		// if(debug){console.log($('.catalog-product-view .input-box').find('select').length);}
 		if ($('.catalog-product-view .input-box').find('select').length > 1 && $('.product-options dt .required:contains("Farbe")').length >0) {
 			var inputbox = $('.catalog-product-view .input-box').eq(0);
