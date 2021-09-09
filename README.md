@@ -6,7 +6,7 @@ It creates a colorbox with color of image by analyzing it.
 
 Usage:
 
-    <code>
+   ```javascript
     //create an Instance of it
     var cB =  new colorBar({
 				color : color,  // string color name
@@ -14,4 +14,4 @@ Usage:
 				icon : '', // Fontawesome Icon to show
 				img : document.querySelector('.gallery-image'),
 			}); 
-    </code>
+```
